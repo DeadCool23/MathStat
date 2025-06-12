@@ -1,0 +1,63 @@
+\chapter{Формулы}
+
+\section*{Формулы для вычисления границ $\gamma$ - доверительного интервала для математического ожидания и дисперсии нормальной случайной величины}
+
+\begin{center}
+\captionsetup{justification=raggedright,singlelinecheck=off}
+	\begin{longtable}[c]{|l|c|c|}
+	\caption{Таблица границ доверительных интервалов}
+		\\ \hline
+		Параметры & Центральная статистика & Границы 
+		\\ \hline
+        \makecell{
+    		$\mu$ -- неизвестно,\\
+    		$\sigma$ -- известно.\\ 
+    		\textbf{Оценить} $\mu$.
+        }
+		& 
+		$\frac{\mu - \overline{X}}{\sigma} \sqrt{n} \sim N(0,1)$
+		& 
+        \makecell{
+    		$\underline\mu(\vec X_n) = \overline{X} - \frac{u_{1 - \alpha} \sigma}{\sqrt{n}}$\\
+    		$\overline\mu(\vec X_n) = \overline{X} + \frac{u_{1 - \alpha} \sigma}{\sqrt{n}}$
+        }
+		\\ \hline
+        \makecell{
+    		$\mu$ -- неизвестно,\\ 
+    		$\sigma$ -- неизвестно.\\ 
+		    \textbf{Оценить} $\mu$.
+        }
+		&  
+		$\frac{\mu - \overline{X}}{S(\vec X_n)} \sqrt{n} \sim St(n - 1)$
+		& 
+        \makecell{
+    		$\underline\mu(\vec X_n) = \overline{X} - \frac{t^{(n - 1)}_{1 - \alpha} S(\vec X_n)}{\sqrt{n}}$\\
+    		$\overline\mu(\vec X_n) = \overline{X} + \frac{t^{(n - 1)}_{1 - \alpha} S(\vec X_n)}{\sqrt{n}}$
+        }
+		\\ \hline
+        \makecell{
+    		$\sigma$ -- неизвестно.\\ 
+    		\textbf{Оценить} $\sigma^2$.
+        }
+		&  
+		\newline $\frac{S(\vec X_n)}{\sigma^2} (n - 1) \sim \chi^2 (n - 1)$
+		&    
+        \makecell{
+    		$\underline\sigma^2(\vec X_n) = \frac{S^2(\vec X_n) (n - 1)}{h^{(n - 1)}_{1 - \alpha}}$\\
+    		$\overline\sigma^2(\vec X_n) = \frac{S^2(\vec X_n) (n - 1)}{h^{(n - 1)}_{\alpha}}$
+        }
+	    \\ \hline
+\end{longtable}
+\end{center}
+
+где:
+\begin{itemize}[label=]
+    \item n --- объем выборки,
+    \item $\overline X = \frac {1}{n} \sum_{i=1}^n X_i$ --- выборочное среднее,
+    \item $S^2(\vec X_n) = \frac 1{n-1} \sum_{i=1}^n (X_i-\overline X)^2$ --- исправленная выборочная дисперсия,
+    \item $\gamma$ --- уровень доверия,
+    \item $\alpha = \frac{1 - \gamma}{2}$,
+    \item $u_{\alpha}$ --- квантиль уровня $\alpha$ распределения $N(0,1)$,
+	\item $t_{\alpha}^{(n-1)}$ --- квантиль уровня $\alpha$ распределения $St(n - 1)$,
+	\item $h_{\alpha}^{(n-1)}$ --- квантиль уровня $\alpha$ распределения $\chi^2 (n - 1)$.
+\end{itemize}
