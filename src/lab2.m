@@ -54,9 +54,11 @@ function [mu, s2] = calc_select_params(X)
     
     mu = 0;
     s2 = 0;
-
-    if (n > 1)
+    
+    if (n > 0)
         mu = sum(X) / n;
+    end
+    if (n > 1)
         s2 = sum((X - mu) .^2) / (n - 1);
     end
 end
